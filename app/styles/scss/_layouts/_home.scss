@@ -1,0 +1,350 @@
+.HomeTop{
+	background:#eee;
+	width:100%;
+	height:800px;
+	position:fixed;  
+}
+.HomeTopImg{
+	
+	$blur:10px;
+	position:absolute;
+
+	width:100%;
+	height:100%; 
+	overflow:hidden;
+	background:#000;
+	img{
+		max-width:100%;
+		min-width:100%;
+		max-height:100%;
+		min-height:100%; 
+  
+		opacity:0.7; 
+		@include transition(0.3s);
+	}
+}
+ 
+
+//Orator Std
+.HomeTopInner{ 
+	height:calc(100% - 100px); 
+	position:relative;
+	overflow:hidden;
+	.gBox{
+		$gBoxWidth:600px;
+		$gBoxInnerHeight:70; // -- No need of unit , Its in %
+
+		width:$gBoxWidth;
+		left:calc( 50% - #{$gBoxWidth / 2});
+		height:$gBoxWidth / 100 * $gBoxInnerHeight;
+		max-height:$gBoxWidth / 100 * $gBoxInnerHeight;
+		top:calc( 50% - #{ ( $gBoxWidth / 100 * $gBoxInnerHeight ) / 2 } ) ; 
+		position:absolute; 
+		font-family:Rakoon;
+
+		$g1:50%;
+		$g2:35%;
+		$g3:18%;
+
+		$gMargin:20px;
+		$ActiveMargin:250px;
+ 		@include transition(0.3s);
+		.g1,.g2,.g3{ 
+			position:absolute;
+			.innerGrid{
+				$gridWidth:70%; 
+				width:$gridWidth;
+				height:$gridWidth;
+				position:absolute;
+				top:#{(100% - $gridWidth) / 2};
+				left:#{(100% - $gridWidth) / 2};
+				background:$TRed;
+				@include transform(rotate(45deg));
+			}
+			.innerText{
+				color:#fff;
+				text-align:center;
+				font-size:250%;
+				padding:0 20px;
+				position:relative;
+				z-index:3;
+				padding-top:35%;
+			}
+			@include transition(1s); 
+			opacity:0;
+		}
+		.g1{
+			width:$g1;
+			height:$g1 * 100 / $gBoxInnerHeight;
+			left:#{50% - ($g1 / 2) };
+			top:$ActiveMargin;
+			.innerGrid{@include border-radius(6px);}
+		}  
+		.g2{
+			width:$g2;
+			height:$g2 * 100 / $gBoxInnerHeight; 
+			top:calc(#{$g1 / 2} + #{$gMargin } + #{$ActiveMargin});
+			.innerGrid{@include border-radius(5px);} 
+			@include transition-delay(0.2s);
+		}
+		.g2-1{
+			left:0;
+			.innerText{ 
+				font-size:150%;
+				padding:0 20px; 
+				padding-top:40%;
+			}}
+		.g2-2{
+			right:0; 
+			.innerText{ 
+				font-size:150%;
+				padding:0 40px; 
+				padding-top:34%; 
+			}
+		}
+		.g3{
+			width:$g3;
+			height:$g3 * 100 / $gBoxInnerHeight; 
+			top:calc(#{ $g1 } + #{$gMargin * 1.5} + #{$ActiveMargin});
+			.innerGrid{@include border-radius(4px);}
+			@include transition-delay(0.4s);
+		}
+		.g3-1{left:calc(#{$g2} + #{$gMargin * 0.5} - #{$g3 / 2});}
+		.g3-2{right:calc(#{$g2} + #{$gMargin * 0.5} - #{$g3 / 2});}
+	}
+	.gBox.active{
+		$gBoxWidth:600px;
+		$gBoxInnerHeight:70; // -- No need of unit , Its in %
+ 
+		top:calc( 50% - #{ ( $gBoxWidth / 100 * $gBoxInnerHeight ) / 2 } ) ;   
+
+		$g1:50%;
+		$g2:35%;
+		$g3:18%;
+
+		$gMargin:20px; 
+		.g1,.g2,.g3{opacity:1 ;}
+		.g1{ 
+			top:0px;  
+		}  
+		.g2{ 
+			top:calc(#{$g1 / 2} + #{$gMargin });  
+		} 
+		.g3{ 
+			top:calc(#{ $g1 } + #{$gMargin * 1.5});  
+		} 
+	}
+	.gBox.hide{
+		$gBoxWidth:600px;
+		$gBoxInnerHeight:70; // -- No need of unit , Its in %
+ 
+		top:calc( 50% - #{ ( $gBoxWidth / 100 * $gBoxInnerHeight ) / 2 } ) ;   
+
+		$g1:50%;
+		$g2:35%;
+		$g3:18%;
+
+		$gMargin:20px; 
+		$ActiveMargin: -500px;
+
+		.g1,.g2,.g3{opacity:0 ;}
+		.g1{ 
+			top:$ActiveMargin;  
+		}  
+		.g2{ 
+			top:calc(#{$g1 / 2} + #{$gMargin } + #{$ActiveMargin});  
+		} 
+		.g3{ 
+			top:calc(#{ $g1 } + #{$gMargin * 1.5} + #{$ActiveMargin});  
+		} 
+	}
+}
+
+
+.HomeMid{
+	width:100%;
+	min-height:500px;
+	background:#fff;
+	position:relative;
+	margin-top:1500px;
+	padding-top:100px;
+	padding-bottom:50px;
+	.HM-mTop{ 
+		position:absolute;
+		overflow:hidden;
+		width:100%;
+		height:100px; 
+		top:-100px;
+		z-index:4;
+		div{
+			position:absolute;
+			background:#fff;
+			width:140%;
+			height:100px; 
+			top:50px;
+			@include transform(rotate(-3deg)); 
+		}
+	}
+	.HM-mBottom{ 
+		position:absolute;
+		overflow:hidden;
+		width:100%;
+		height:100px; 
+		bottom:-100px;
+		z-index:4;
+		div{
+			position:absolute;
+			background:#fff;
+			width:140%;
+			height:100px; 
+			top:-50px;
+			@include transform(rotate(3deg)); 
+		}
+	}
+
+	.HM-Block{
+		width:100%;
+		min-height:100px; 
+		padding:20px 10px;
+		font-family:Orator;
+		font-size:120%;
+		color:#999;   
+		letter-spacing: -0.1em;
+		opacity:0;
+		@include transition(opacity 1s);
+		.imgBox{
+			width:200px;
+			height:200px;
+			@include shadow(0,0,15px,rgba(0,0,0,0.2));
+			@include border-radius(15px);
+			margin:5px 20px;
+			img{
+				max-width:100%;
+				min-width:100%;
+				max-height:100%;
+				min-height:100%;
+			}
+		}
+		h5{
+			display:block; 
+			color:$TRed;
+			font-size:190%;
+			margin-top:30px;
+		}
+		p{
+			width:60%;
+		}
+		.p-right{
+			float:right;
+			text-align:right; 
+		}
+	}
+	.Block-active{
+		opacity:1;
+	}
+} 
+
+.HomeBottom{
+	width:100%;
+	min-height:500px;
+	background:$TRed;
+	position:relative; 
+	padding-top:150px;
+	.HB-Block{
+
+		$blockWidth : 450px;
+
+		min-height:300px;
+		width:$blockWidth;
+		margin:0 calc( (100% - #{$blockWidth} ) / 2); 
+		margin-bottom:100px;
+		.head,.mid,.foot{
+			width:100%; 
+			min-height:100px;
+		}
+		.head{
+			font-size:300%;
+			font-family:Neon;
+			text-align:center;
+			padding:10px 0;
+			color:#fff;
+
+		}
+		.mid{ 
+			.imgBox{
+				width:200px;
+				height:200px;
+				@include shadow(0,0,15px,rgba(0,0,0,0.2));
+				@include border-radius(15px);
+				margin:10px calc((100% - 200px)/2);
+				background:#fff;
+				img{
+					max-width:100%;
+					min-width:100%;
+					max-height:100%;
+					min-height:100%;
+				}
+			}
+		}
+		.foot{
+			font-family:Orator;
+			color:rgba(255,255,255,0.3);
+			text-align:center;
+			h4{ 
+				font-size:120%;
+				color:#fff;
+			} 
+		}
+	}
+}
+.footerTop{
+	width:100%;
+	min-height:300px;
+	.FT-logo{
+		position:absolute;
+		width:300px;
+		height:300px;
+		left:calc((100% - 300px)/2);
+		img{
+			position:absolute;
+			left:0px;
+			top:0px;
+			max-width:100%;
+			min-width:100%;
+			@include transition(0.3s);
+		}
+		.img1{ opacity:0.2;}
+		.img2{ opacity:0.5;}
+	}
+	.FT-logo:hover{ 
+		cursor:pointer;
+		.img1{ opacity:0.4; @include transform(scale(0.95));}
+		.img2{ opacity:0.9; @include transform(scale(1.03));}
+	}
+
+	.linkSet{
+		font-family:GOTHIC;
+		width:calc(44% - 150px); 
+		margin-top:60px;
+		.left,.right{
+			width:50%;
+			div{
+				width:100%; 
+				color:rgba(255,255,255,0.6);
+				line-height:30px;
+				@include transition(0.3s);
+			}
+			div:hover{
+				cursor:pointer;
+				color:rgba(255,255,255,1);
+			}
+		}
+	}
+	.linkSetLeft{ 
+		margin-left:6%; 
+	}
+	.linkSetRight{ 
+		float:right;
+		margin-right:2%; 
+	}
+}

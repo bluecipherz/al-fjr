@@ -1,0 +1,37 @@
+/* Colors */
+/* images */
+/* Testing */
+body {
+  min-width: 100%;
+  min-height: 100%;
+  background: #fff; }
+
+.blueNav {
+  color: #ddd; }
+
+@font-face {
+  font-family: GOTHIC;
+  src: url(../../fonts/GOTHIC.ttf); }
+@font-face {
+  font-family: Rakoon;
+  src: url(../../fonts/Rakoon.ttf); }
+@font-face {
+  font-family: Orator;
+  src: url(../../fonts/OratorStd.otf); }
+@font-face {
+  font-family: Neon;
+  src: url(../../fonts/Neon.ttf); }
+/*==========================================================================================*/
+body {
+  font-family: GOTHIC;
+  padding: 0; }
+
+div {
+  display: block;
+  float: left; }
+
+.Boxx {
+  width: 1080px;
+  margin-left: calc(50% - 540px ); }
+
+/*# sourceMappingURL=base.css.map */

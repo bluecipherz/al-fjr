@@ -1,0 +1,44 @@
+@import '_base/variables';
+@import '_functions/baseFunctions';
+body{ 
+  min-width: 100%;
+  min-height: 100%;
+  background:#fff; 
+}
+.blueNav{
+	color:#ddd;
+}
+ 
+@font-face {
+    font-family: GOTHIC;
+    src: url(../../fonts/GOTHIC.ttf); 
+} 
+@font-face {
+    font-family: Rakoon;
+    src: url(../../fonts/Rakoon.ttf); 
+}  
+@font-face {
+    font-family: Orator;
+    src: url(../../fonts/OratorStd.otf); 
+} 
+@font-face {
+    font-family: Neon;
+    src: url(../../fonts/Neon.ttf); 
+} 
+
+
+/*==========================================================================================*/
+body {
+  font-family: GOTHIC; 
+  padding: 0;
+}
+div{
+  display:block;
+  float:left;
+} 
+
+$pageWidth : 1080;
+.Boxx{
+  width:#{$pageWidth}px;
+  margin-left:calc(50% - #{ $pageWidth / 2 }px );
+}

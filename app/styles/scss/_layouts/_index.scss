@@ -1,0 +1,84 @@
+@import '../_base/variables'; 
+@import '../_functions/baseFunctions'; 
+  
+$NavPaddingTop:40px;
+$NavColor:#222;
+$NavLineHeight:60px; 
+.cust-header{
+	background:$NavColor; 
+	padding-top:$NavPaddingTop;
+	.bl-ul > li > a{ 
+	    line-height:$NavLineHeight; 
+	}
+	.bl-ul > .active > a{
+		background:none;
+	    color:#fff;
+	}
+}
+.cust-header{
+
+	/* Logo Config */
+
+	$LogoWidth:250px;
+	$LogoMarginLeft:20px;
+	$LogoMarginTop:15px;
+
+	.logo{
+		position:absolute;
+		top:$LogoMarginTop - $NavPaddingTop;
+		width:$LogoWidth;
+		left:$LogoMarginLeft;
+		img{
+			position:relative;
+			z-index:2;
+			max-width:100%;
+			min-width:100%;
+		}
+		.logoCircle{
+			position:absolute;
+			background:$NavColor;
+			@include border-radius(50%);
+			width:110px;  // ----------------------------------- Fix this while changing logo config
+			height:110px;  // ----------------------------------- Fix this while changing logo config
+			top:0px;  // ----------------------------------- Fix this while changing logo config
+			left:8px;  // ----------------------------------- Fix this while changing logo config
+		}
+	}
+	.bl-ul{
+		margin-left:$LogoMarginLeft + $LogoWidth + 10px;
+	}
+	li{
+		padding:0 20px;
+	}
+}
+.navRoller{
+	position:absolute;
+	top:0xp;
+	left:0px;
+	width:0px;
+	height:$NavLineHeight;
+	background:rgba(255,255,255,0.15);
+	@include border-radius(6px 6px 0 0);
+	@include transition(0.5s);
+	border-bottom:2px solid $TYellow;
+
+}
+.viewPort{
+	position:relative;
+	margin-top:$NavPaddingTop + $NavLineHeight;
+	width:100%;
+}
+
+.footer{
+	width:100%;
+	min-height:200px;
+	background:rgba(0,0,0,0.5);
+	position:relative;
+	z-index:10;
+	max-width:100%;
+	overflow:hidden;
+	img{
+		width:300px; 
+		margin:40px calc(((100% - 200px)/2) + 30px ); 
+	}
+}
